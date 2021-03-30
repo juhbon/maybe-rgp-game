@@ -17,10 +17,10 @@ protected:
 	bool alive = true;
 	sight_direction glance;
 
-	void sprite_move();
+	virtual void sprite_move();
 public:
 	Creature();
-	Creature(int x, int y);
+	Creature(int x, int y, String spr_string);
 	void move_left();
 	void move_right();
 	void move_up();
@@ -28,4 +28,5 @@ public:
 	void set_pos(int x, int y);
 	Vector2i get_pos();
 	Sprite& getSprite();
+	//virtual ~Creature() {};
 };

@@ -1,11 +1,7 @@
-#include <iostream>
-#include <string>
-#include <vector>
-#include <iterator>
-#include <thread>
-#include <SFML/Graphics.hpp>
+#include "Includes.h"
 #include "Creature.h"
 #include "Hunter.h"
+#include "Thief.h"
 
 using namespace std;
 using namespace sf;
@@ -15,8 +11,8 @@ const int WINDOW_Y = MOVEMENT_UNIT*32;
 
 RenderWindow window(VideoMode(WINDOW_X, WINDOW_Y), "It's alive!");
 
-Creature myHero(MOVEMENT_UNIT*5, MOVEMENT_UNIT*5);
-Hunter myDeleter(400, 400);
+Thief myHero(32, 32, string("img/sprite.png"));
+Hunter myDeleter(400, 400, string("img/circle.png"));
 
 void event_process(RenderWindow& w, Event& ev) 
 {
@@ -70,6 +66,7 @@ int main() {
 		Sprite back_sprite(back_texture, IntRect(MOVEMENT_UNIT, MOVEMENT_UNIT, WINDOW_X, WINDOW_Y));
 		window.draw(back_sprite);
 
+		/*
 		ConvexShape conv;
 		conv.setPointCount(4);
 		conv.setPoint(0, Vector2f(0.f, 0.f));
@@ -87,6 +84,7 @@ int main() {
 		line_with_thickness.setFillColor(Color(15, 180, 140)); // устанавливаем цвет линии
 		line_with_thickness.move(0, 150); // перемещаем её в нижний ряд справа от прямоугольника
 		window.draw(line_with_thickness); // отрисовка линии
+		*/
 
 		window.draw(myHero.getSprite());
 		window.draw(myDeleter.getSprite());
