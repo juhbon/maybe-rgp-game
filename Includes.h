@@ -10,3 +10,4 @@
 using namespace sf;
 
 static int const MOVEMENT_UNIT = 32;
+static int const HUNTER_SPEED = 10;

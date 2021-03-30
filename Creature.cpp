@@ -18,6 +18,16 @@ Creature::Creature() {
 	sprite_move();
 }
 
+Creature::Creature(int x, int y) {
+	pos.x = x;
+	pos.y = y;
+	glance = sight_direction::NORTH;
+	texture.loadFromFile("img/sprite.png");
+	Sprite temp_sprite(texture);
+	sprite = temp_sprite;
+	sprite_move();
+}
+
 Creature::Creature(int x, int y, String spr_string)
 {
 	pos.x = x;

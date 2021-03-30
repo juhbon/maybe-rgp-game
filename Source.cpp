@@ -11,7 +11,7 @@ const int WINDOW_Y = MOVEMENT_UNIT*32;
 
 RenderWindow window(VideoMode(WINDOW_X, WINDOW_Y), "It's alive!");
 
-Thief myHero(32, 32, string("img/sprite.png"));
+Thief myHero; // 32, 32, string("img/sprite.png"));
 Hunter myDeleter(400, 400, string("img/circle.png"));
 
 void event_process(RenderWindow& w, Event& ev) 

@@ -5,16 +5,16 @@ void Thief::sprite_move() {
 	conv_thief.setPosition(pos.x, pos.y);
 }
 
-Thief::Thief() {
+Thief::Thief() : Creature(16, 16) {
 	//ConvShape conv_thief;
 	conv_thief.setPointCount(4);
 	conv_thief.setPoint(0, Vector2f(0.f, 32.f));
 	conv_thief.setPoint(1, Vector2f(16.f, 0.f));
-	conv_thief.setPoint(2, Vector2f(0.f, 70.f));
-	conv_thief.setPoint(3, Vector2f(16.f, 32.f));
-	conv_thief.setFillColor(Color::Cyan);
-	conv_thief.setOutlineThickness(5);
-	conv_thief.setOutlineColor(Color::Blue);
+	conv_thief.setPoint(2, Vector2f(32.f, 32.f));
+	conv_thief.setPoint(3, Vector2f(16.f, 21.f));
+	conv_thief.setFillColor(Color::Blue);
+	conv_thief.setOutlineThickness(1);
+	conv_thief.setOutlineColor(Color::Cyan);
 	conv_thief.setOrigin(16, 16);
 	sprite_move();
 	//w.draw(conv_thief);
@@ -27,9 +27,9 @@ Thief::Thief(int x, int y, String spr_string): Creature(x+16, y+16, spr_string) 
 	conv_thief.setPoint(1, Vector2f(16.f, 0.f));
 	conv_thief.setPoint(2, Vector2f(32.f, 32.f));
 	conv_thief.setPoint(3, Vector2f(16.f, 21.f));
-	conv_thief.setFillColor(Color::Cyan);
-	conv_thief.setOutlineThickness(2);
-	conv_thief.setOutlineColor(Color::Blue);
+	conv_thief.setFillColor(Color::Red);
+	conv_thief.setOutlineThickness(1);
+	conv_thief.setOutlineColor(Color::Magenta);
 	conv_thief.setOrigin(16, 16);
 	sprite_move();
 }
@@ -48,4 +48,13 @@ void Thief::hack()
 
 ConvexShape Thief::getSprite() {
 	return conv_thief;
+}
+
+void Thief::set_pos(int x, int y)
+{
+	if (alive) {
+		pos.x = x + 16;
+		pos.y = y + 16;
+		sprite_move();
+	}
 }

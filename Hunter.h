@@ -27,8 +27,8 @@ public:
 				int temp_point_x = (hero_pos.x - pos.x);
 				int temp_point_y = (hero_pos.y - pos.y);
 				float length = sqrt((temp_point_x * temp_point_x) + (temp_point_y * temp_point_y));
-				new_pos_x = (temp_point_x / abs(length)) * 5;
-				new_pos_y = (temp_point_y / abs(length)) * 5;
+				new_pos_x = (temp_point_x / abs(length)) * HUNTER_SPEED;
+				new_pos_y = (temp_point_y / abs(length)) * HUNTER_SPEED;
 				Hunter::move_hole(new_pos_x, new_pos_y);
 			}
 		}
